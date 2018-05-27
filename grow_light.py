@@ -14,12 +14,19 @@ serialPort = os.getenv("SERIAL_PORT")
 # open serial connection
 serialConnection = serial.Serial(serialPort, 9600)
 
-print("GROW LIGHT~~~\n")
-print("Connected to port: {}\n".format(serialPort))
+# FUNCTIONS --------------------------------------------------------------------
+# intro
+def introduction():
+    print("GROW LIGHT~~~\n")
+    print("Connected to port: {}\n".format(serialPort))
 
-print("0: Turn off grow lights")
-print("1: Turn on grow lights")
-print("exit: Exit program\n\n")
+    print("0: Turn off grow lights")
+    print("1: Turn on grow lights")
+    print("exit: Exit program\n\n")
+
+# MAIN -------------------------------------------------------------------------
+# inform user
+introduction()
 
 # start an input loop
 while loop:

@@ -20,12 +20,12 @@ void loop() {
     // check the command instruction
     switch (command) {
       case 0:
-        // grow lights on
+        // grow lights off
         control_grow_relay(HIGH);
         Serial.println("Grow Lights: Off");
         break;
       case 1:
-        // grow lights off
+        // grow lights on
         control_grow_relay(LOW);   
         Serial.println("Grow Lights: On");
         break;

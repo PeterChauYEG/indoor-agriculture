@@ -1,2 +1,3 @@
+schedule
 pyserial==3.4
 python-dotenv
