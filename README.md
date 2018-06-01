@@ -19,3 +19,15 @@ exit: Exit program
 
 2. Run grow lights on a schedule against `.env` config: `python grow_light_schedule.py`
 - Configure your day/night schedule in `.env`
+
+## Raspberry Pi Setup
+- Create an image on a Micro SD card (Raspbian Jessie Lite)
+- add the `ssh.txt` file in the pi folder to the card
+- configure your network, and add the `wpa_supplicant.conf` file in the pi folder to the card
+- run `sudo raspi-config`, expand your filesystem, and update the pi software
+- reboot the pi with `sudo reboot`
+- run `sudo apt-get update && sudo apt-get upgrade`
+- install git: `sudo apt-get install git`
+- install pip: `sudo apt-get install python3-pip`
+
+**NOTE:** python version 3 is aliased as python3. Pip is pip3.
