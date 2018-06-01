@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from pathlib import Path
+from dotenv import find_dotenv
 import datetime
 import os
 import schedule
@@ -7,8 +7,7 @@ import serial
 import time
 
 # load settings
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
+load_dotenv(find_dotenv())
 
 # global
 DAY_HOURS = os.getenv("DAY_HOURS")

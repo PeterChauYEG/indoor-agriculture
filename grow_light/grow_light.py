@@ -1,11 +1,10 @@
-from pathlib import Path
 from dotenv import load_dotenv
+from dotenv import find_dotenv
 import os
 import serial
 
 # load settings
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
+load_dotenv(find_dotenv())
 
 # global
 loop = 1
