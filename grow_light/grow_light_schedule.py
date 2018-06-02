@@ -14,12 +14,18 @@ DAY_HOURS = os.getenv("DAY_HOURS")
 NIGHT_HOURS = os.getenv("NIGHT_HOURS")
 serialPort = os.getenv("SERIAL_PORT")
 
-# open serial connection
-serialConnection = serial.Serial(serialPort, 9600)
-
 # FUNCTIONS --------------------------------------------------------------------
+def initializeSerial():
+    print("Opening serial connection")
+
+    # open serial connection
+    serialConnection = serial.Serial(serialPort, 9600)
+    time.sleep(5)
+    return serialConnection
+
 # intro
 def introduction():
+    print("GROW LIGHT~~~")
     print("Running a {}/{} (day/night) schedule".format(DAY_HOURS, NIGHT_HOURS))
 
 # generate times for the schedule
@@ -47,18 +53,21 @@ def grow_light(mode):
 
     # check the mode and map it to a command
     if mode == 'DAY':
-        command = 1
+        command = "1"
         print("Running day mode for {}".format(DAY_HOURS))
     elif mode == 'NIGHT':
         command = 0
         print("Running night mode for {}".format(NIGHT_HOURS))
 
     # send command to arduino
-    serialConnection.write(command)
+    serialConnection.write(command.encode())
 
 # MAIN -------------------------------------------------------------------------
 # inform user
 introduction()
+
+# initialize serial connection
+serialConnection = initializeSerial()
 
 # generate times
 dayTime, nightTime = generateTimes()
