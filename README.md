@@ -2,13 +2,14 @@
 This indoor agriculture seeks to be an automated fogponics system.
 
 ## Setup
-1. Build your circuit following `LED Grow Light.fzz`
-2. Upload `grow_light.ino` to an Arduino board
+1. Build your circuit following `grow_light.fzz` or `ultrasonic_fogger.fzz`
+2. Upload the appropriate program to an Arduino board
 3. Install Python3 dependancies with: `pip install -r requirements.txt`
 4. Configure your serial connection to match with the one you are connecting to in: `.env`
 
 ## Programs
-1. Ensure grow lights and serial communications are working correctly: `python grow_light.py`
+### Test Grow Lights and Serial Communications
+Ensure grow lights and serial communications are working correctly: `python grow_light.py`
 
 **Commands**
 ```
@@ -17,8 +18,21 @@ This indoor agriculture seeks to be an automated fogponics system.
 exit: Exit program
 ```
 
-2. Run grow lights on a schedule against `.env` config: `python grow_light_schedule.py`
+### Run grow lights on a schedule
+Run grow lights on a schedule against `.env` config: `python grow_light_schedule.py`
 - Configure your day/night schedule in `.env`
+
+### Test Grow Lights and Serial Communications
+Ensure grow lights, ultrasonic fogger, and serial communications are working correctly: `python ultrasonic_fogger.py`
+
+**Commands**
+```
+0: Turn off grow lights
+1: Turn on grow lights
+2: Turn off ultrasonic fogger
+3: Turn on ultrasonic fogger
+exit: Exit program
+```
 
 ## Raspberry Pi Setup
 - Create an image on a Micro SD card (Raspbian Jessie Lite)
