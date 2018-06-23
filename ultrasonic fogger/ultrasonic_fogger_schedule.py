@@ -35,8 +35,8 @@ def introduction():
 # generate minutes for the grow light schedule
 def generateGrowLightTimes():
     # convert hours to int minutes
-    dayMinutes = int(DAY_HOURS)
-    nightMinutes = int(NIGHT_HOURS)
+    dayMinutes = int(DAY_HOURS) * 60
+    nightMinutes = int(NIGHT_HOURS) * 60
 
 
     return dayMinutes, nightMinutes
