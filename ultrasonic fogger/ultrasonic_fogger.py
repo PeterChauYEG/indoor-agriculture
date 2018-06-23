@@ -16,7 +16,7 @@ serialConnection = serial.Serial(serialPort, 9600)
 # FUNCTIONS --------------------------------------------------------------------
 # intro
 def introduction():
-    print("GROW LIGHT~~~\n")
+    print("GROW LIGHT && ULTRASONIC FOGGER~~~\n")
     print("Connected to port: {}\n".format(serialPort))
 
     print("0: Turn off grow lights")

@@ -34,6 +34,10 @@ Ensure grow lights, ultrasonic fogger, and serial communications are working cor
 exit: Exit program
 ```
 
+### Run grow lights and ultrasonic fogger on a schedule
+Run grow lights on a schedule against `.env` config: `python ultrasonic_fogger_schedule.py`
+- Configure your day/night schedule in `.env`
+-
 ## Raspberry Pi Setup
 - Create an image on a Micro SD card (Raspbian Jessie Lite)
 - add the `ssh.txt` file in the pi folder to the card
