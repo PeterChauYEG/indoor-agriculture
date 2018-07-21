@@ -37,7 +37,13 @@ exit: Exit program
 ### Run grow lights and ultrasonic fogger on a schedule
 Run grow lights on a schedule against `.env` config: `python ultrasonic_fogger_schedule.py`
 - Configure your day/night schedule in `.env`
--
+
+### Run grow lights and ultrasonic fogger on a schedule in the background
+- use no hangup to run in the background, even if the ternminal is closed:
+```nphup python3 -u ultrasonic_fogger_schedule.py &> ./mylog.log &```
+- see the process again with: `ps aux | python`
+- kill the process with: `kill <relevantPID>`
+
 ## Raspberry Pi Setup
 - Create an image on a Micro SD card (Raspbian Jessie Lite)
 - add the `ssh.txt` file in the pi folder to the card
